@@ -1,0 +1,12 @@
+Filesystem      Size  Used Avail Use% Mounted on
+udev            319M     0  319M   0% /dev
+tmpfs           182M  4.1M  178M   3% /run
+/dev/mmcblk0p2   28G  3.0G   24G  11% /
+tmpfs           453M     0  453M   0% /dev/shm
+tmpfs           5.0M   12K  5.0M   1% /run/lock
+tmpfs           1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+tmpfs           453M     0  453M   0% /tmp
+/dev/mmcblk0p1  510M   67M  444M  14% /boot/firmware
+tmpfs           1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+tmpfs           1.0M     0  1.0M   0% /run/credentials/serial-getty@ttyS0.service
+tmpfs            91M  8.0K   91M   1% /run/user/1000

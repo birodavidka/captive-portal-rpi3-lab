@@ -1,0 +1,104 @@
+===== OS =====
+PRETTY_NAME="Debian GNU/Linux 13 (trixie)"
+NAME="Debian GNU/Linux"
+VERSION_ID="13"
+VERSION="13 (trixie)"
+VERSION_CODENAME=trixie
+DEBIAN_VERSION_FULL=13.3
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+
+Linux pi 6.12.62+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.12.62-1+rpt1 (2025-12-18) aarch64 GNU/Linux
+
+ Static hostname: pi
+       Icon name: computer
+      Machine ID: 01a63b22a4504aa3800e1eefbda126dc
+         Boot ID: 649cb7cf8f994be196b2d560ee2dea32
+Operating System: Debian GNU/Linux 13 (trixie)
+          Kernel: Linux 6.12.62+rpt-rpi-v8
+    Architecture: arm64
+
+===== MODEL / CPU / RAM =====
+Raspberry Pi 3 Model B Rev 1.2
+4
+
+               total        used        free      shared  buff/cache   available
+Mem:           905Mi       155Mi       560Mi       4.0Mi       251Mi       750Mi
+Swap:          904Mi          0B       904Mi
+
+===== STORAGE =====
+NAME         SIZE FSTYPE MOUNTPOINT     MODEL
+loop0        905M swap
+mmcblk0       29G
+├─mmcblk0p1  512M vfat   /boot/firmware
+└─mmcblk0p2 28.5G ext4   /
+zram0        905M swap   [SWAP]
+
+Filesystem      Size  Used Avail Use% Mounted on
+udev            319M     0  319M   0% /dev
+tmpfs           182M  4.1M  178M   3% /run
+/dev/mmcblk0p2   28G  3.0G   24G  11% /
+tmpfs           453M     0  453M   0% /dev/shm
+tmpfs           5.0M   12K  5.0M   1% /run/lock
+tmpfs           1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+tmpfs           453M     0  453M   0% /tmp
+/dev/mmcblk0p1  510M   67M  444M  14% /boot/firmware
+tmpfs           1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+tmpfs           1.0M     0  1.0M   0% /run/credentials/serial-getty@ttyS0.service
+tmpfs            91M  8.0K   91M   1% /run/user/1000
+
+===== NETWORK =====
+lo               UNKNOWN        127.0.0.1/8 ::1/128
+eth0             UP             192.168.0.186/24 2a02:ab88:d89:d600:ba27:ebff:fe03:e456/64 fe80::ba27:ebff:fe03:e456/64
+wlan0            UP             192.168.0.18/24 2a02:ab88:d89:d600:ba27:ebff:fe56:b103/64 fe80::ba27:ebff:fe56:b103/64
+
+default via 192.168.0.1 dev eth0 proto dhcp src 192.168.0.186 metric 100
+default via 192.168.0.1 dev wlan0 proto dhcp src 192.168.0.18 metric 600
+192.168.0.0/24 dev eth0 proto kernel scope link src 192.168.0.186 metric 100
+192.168.0.0/24 dev wlan0 proto kernel scope link src 192.168.0.18 metric 600
+
+Netid State  Recv-Q Send-Q               Local Address:Port  Peer Address:PortProcess
+udp   UNCONN 0      0                          0.0.0.0:5353       0.0.0.0:*
+udp   UNCONN 0      0                          0.0.0.0:41634      0.0.0.0:*
+udp   UNCONN 0      0                                *:5353             *:*
+udp   UNCONN 0      0      [fe80::ba27:ebff:fe03:e456]:546              *:*
+udp   UNCONN 0      0                                *:52846            *:*
+tcp   LISTEN 0      128                        0.0.0.0:22         0.0.0.0:*
+tcp   LISTEN 0      128                           [::]:22            [::]:*
+
+===== WIFI =====
+phy#0
+	Unnamed/non-netdev interface
+		wdev 0x2
+		addr ba:27:eb:56:b1:03
+		type P2P-device
+		txpower 31.00 dBm
+	Interface wlan0
+		ifindex 3
+		wdev 0x1
+		addr b8:27:eb:56:b1:03
+		ssid UPC1850260
+		type managed
+		channel 1 (2412 MHz), width: 20 MHz, center1: 2412 MHz
+		txpower 31.00 dBm
+
+0: hci0: Bluetooth
+	Soft blocked: yes
+	Hard blocked: no
+1: phy0: Wireless LAN
+	Soft blocked: no
+	Hard blocked: no
+
+===== FORWARD / FIREWALL =====
+net.ipv4.ip_forward = 0
+
+
+===== SERVICES =====
+active
+active
+inactive
+active
+inactive
+inactive

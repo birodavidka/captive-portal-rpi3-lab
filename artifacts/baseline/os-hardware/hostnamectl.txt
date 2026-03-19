@@ -1,0 +1,7 @@
+ Static hostname: pi
+       Icon name: computer
+      Machine ID: 01a63b22a4504aa3800e1eefbda126dc
+         Boot ID: 649cb7cf8f994be196b2d560ee2dea32
+Operating System: Debian GNU/Linux 13 (trixie)
+          Kernel: Linux 6.12.62+rpt-rpi-v8
+    Architecture: arm64

@@ -1,0 +1,7 @@
+○ systemd-networkd.service - Network Configuration
+     Loaded: loaded (/usr/lib/systemd/system/systemd-networkd.service; disabled; preset: enabled)
+     Active: inactive (dead)
+TriggeredBy: ○ systemd-networkd.socket
+       Docs: man:systemd-networkd.service(8)
+             man:org.freedesktop.network1(5)
+   FD Store: 0 (limit: 512)

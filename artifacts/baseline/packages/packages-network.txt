@@ -1,0 +1,5 @@
+ii  dnsmasq-base                         2.91-1                               arm64        Small caching DNS proxy and DHCP/TFTP server - executable
+ii  libnftables1:arm64                   1.1.3-1                              arm64        Netfilter nftables high level userspace API library
+ii  libnftnl11:arm64                     1.2.9-1                              arm64        Netfilter nftables userspace API library
+ii  libnm0:arm64                         1.52.1-1+rpt4                        arm64        GObject-based client library for NetworkManager
+ii  nftables                             1.1.3-1                              arm64        Program to control packet filtering rules by Netfilter project

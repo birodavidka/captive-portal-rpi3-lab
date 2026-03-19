@@ -1,0 +1,20 @@
+● wpa_supplicant.service - WPA supplicant
+     Loaded: loaded (/usr/lib/systemd/system/wpa_supplicant.service; enabled; preset: enabled)
+     Active: active (running) since Tue 2026-03-10 14:38:18 CET; 5h 21min ago
+ Invocation: 9f1be417652346a3b51c4eedeaf788a5
+   Main PID: 581 (wpa_supplicant)
+      Tasks: 1 (limit: 764)
+        CPU: 515ms
+     CGroup: /system.slice/wpa_supplicant.service
+             └─581 /usr/sbin/wpa_supplicant -u -s -O "DIR=/run/wpa_supplicant GROUP=netdev"
+
+Mar 10 14:38:45 pi wpa_supplicant[581]: wlan0: WPS-PBC-ACTIVE
+Mar 10 14:38:45 pi wpa_supplicant[581]: wlan0: WPS-CANCEL
+Mar 10 14:38:45 pi wpa_supplicant[581]: wlan0: Trying to associate with 38:43:7d:95:b8:13 (SSID='UPC1850260' freq=2412 MHz)
+Mar 10 14:38:45 pi wpa_supplicant[581]: wlan0: Associated with 38:43:7d:95:b8:13
+Mar 10 14:38:45 pi wpa_supplicant[581]: wlan0: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+Mar 10 14:38:46 pi wpa_supplicant[581]: wlan0: WPA: Key negotiation completed with 38:43:7d:95:b8:13 [PTK=CCMP GTK=CCMP]
+Mar 10 14:38:46 pi wpa_supplicant[581]: wlan0: CTRL-EVENT-CONNECTED - Connection to 38:43:7d:95:b8:13 completed [id=0 id_str=]
+Mar 10 14:38:46 pi wpa_supplicant[581]: bgscan simple: Failed to enable signal strength monitoring
+Mar 10 14:38:49 pi wpa_supplicant[581]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+Mar 10 14:38:49 pi wpa_supplicant[581]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=HU

@@ -1,0 +1,22 @@
+# /etc/nginx/sites-enabled/captive-portal
+
+server {
+    listen 8080 default_server;
+    server_name _;
+
+    root /var/www/captive-portal;
+    index index.html;
+
+    location / {
+        try_files $uri /index.html;
+    }
+
+    # iOS captive check
+    location = /hotspot-detect.html {
+        try_files /hotspot-detect.html =404;
+    }
+
+    # Android captive check
+    location = /generate_204 { return 302 http://192.168.4.1:8080/ ; }
+    location = /gen_204      { return 302 http://192.168.4.1:8080/; }
+}

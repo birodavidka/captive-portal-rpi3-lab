@@ -1,0 +1,19 @@
+● ssh.service - OpenBSD Secure Shell server
+     Loaded: loaded (/usr/lib/systemd/system/ssh.service; enabled; preset: enabled)
+     Active: active (running) since Tue 2026-03-10 14:38:44 CET; 5h 21min ago
+ Invocation: c679ba51a93b4c9ab839bebde9c65636
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+    Process: 984 ExecStartPre=/usr/sbin/sshd -t (code=exited, status=0/SUCCESS)
+   Main PID: 1002 (sshd)
+      Tasks: 1 (limit: 764)
+        CPU: 1.050s
+     CGroup: /system.slice/ssh.service
+             └─1002 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+
+Mar 10 14:38:42 pi systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Mar 10 14:38:44 pi sshd[1002]: Server listening on 0.0.0.0 port 22.
+Mar 10 14:38:44 pi sshd[1002]: Server listening on :: port 22.
+Mar 10 14:38:44 pi systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+Mar 10 19:01:22 pi sshd-session[1315]: Accepted password for pi from 192.168.0.143 port 61253 ssh2
+Mar 10 19:01:22 pi sshd-session[1315]: pam_unix(sshd:session): session opened for user pi(uid=1000) by pi(uid=0)

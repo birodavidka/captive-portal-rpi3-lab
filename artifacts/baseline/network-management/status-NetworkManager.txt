@@ -1,0 +1,21 @@
+NetworkManager.service - Network Manager
+     Loaded: loaded (/usr/lib/systemd/system/NetworkManager.service; enabled; preset: enabled)
+     Active: active (running) since Tue 2026-03-10 14:38:42 CET; 5h 19min ago
+ Invocation: 084ab4f18b194b5cbe42adbe229f4b15
+       Docs: man:NetworkManager(8)
+   Main PID: 580 (NetworkManager)
+      Tasks: 4 (limit: 764)
+        CPU: 14.471s
+     CGroup: /system.slice/NetworkManager.service
+             └─580 /usr/sbin/NetworkManager --no-daemon
+
+Mar 10 17:39:00 pi NetworkManager[580]: <info>  [1773160740.0836] dhcp4 (eth0): state changed new lease, address=192.168.0.186
+Mar 10 17:39:03 pi NetworkManager[580]: <info>  [1773160743.5291] dhcp4 (wlan0): state changed new lease, address=192.168.0.18
+Mar 10 18:09:00 pi NetworkManager[580]: <info>  [1773162540.0770] dhcp4 (eth0): state changed new lease, address=192.168.0.186
+Mar 10 18:09:03 pi NetworkManager[580]: <info>  [1773162543.7997] dhcp4 (wlan0): state changed new lease, address=192.168.0.18
+Mar 10 18:39:00 pi NetworkManager[580]: <info>  [1773164340.3115] dhcp4 (eth0): state changed new lease, address=192.168.0.186
+Mar 10 18:39:03 pi NetworkManager[580]: <info>  [1773164343.5573] dhcp4 (wlan0): state changed new lease, address=192.168.0.18
+Mar 10 19:09:00 pi NetworkManager[580]: <info>  [1773166140.1613] dhcp4 (eth0): state changed new lease, address=192.168.0.186
+Mar 10 19:09:03 pi NetworkManager[580]: <info>  [1773166143.5875] dhcp4 (wlan0): state changed new lease, address=192.168.0.18
+Mar 10 19:39:00 pi NetworkManager[580]: <info>  [1773167940.1071] dhcp4 (eth0): state changed new lease, address=192.168.0.186
+Mar 10 19:39:03 pi NetworkManager[580]: <info>  [1773167943.5351] dhcp4 (wlan0): state changed new lease, address=192.168.0.18

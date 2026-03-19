@@ -1,0 +1,6 @@
+NAME         SIZE FSTYPE MOUNTPOINT     MODEL
+loop0        905M swap
+mmcblk0       29G
+├─mmcblk0p1  512M vfat   /boot/firmware
+└─mmcblk0p2 28.5G ext4   /
+zram0        905M swap   [SWAP]
