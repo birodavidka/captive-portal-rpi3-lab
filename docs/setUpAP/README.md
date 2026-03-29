@@ -113,10 +113,29 @@ Android captive detection tamogatas:
 
 ```ini
 dhcp-option=114,http://192.168.4.1/
+
+# Android
 address=/connectivitycheck.gstatic.com/192.168.4.1
 address=/clients3.google.com/192.168.4.1
 address=/connectivitycheck.android.com/192.168.4.1
+
+# Apple
+address=/captive.apple.com/192.168.4.1
+address=/www.apple.com/192.168.4.1
+
+# Windows
+address=/www.msftconnecttest.com/192.168.4.1
+address=/msftconnecttest.com/192.168.4.1
+address=/www.msftncsi.com/192.168.4.1
+address=/msftncsi.com/192.168.4.1
+
+# Firefox
+address=/detectportal.firefox.com/192.168.4.1
 ```
+
+Megjegyzes:
+- Nem wildcard DNS hijackot hasznalunk, mert auth utan is a Pi-re mutatna minden nevfeloldas.
+- A fenti domain-ek elegsegesek ahhoz, hogy a fo mobil/desktop kliensek captive probe-ja nagy esellyel felhozza a portalt automatikusan.
 
 ## IP forwarding + NAT
 
@@ -221,22 +240,62 @@ server {
     root /var/www/captive-portal;
     index index.html;
 
-    location / {
-        try_files $uri /index.html;
-    }
-
     location = /hotspot-detect.html {
-        try_files /hotspot-detect.html =404;
+        try_files /index.html =404;
     }
 
     location = /generate_204 { return 302 http://192.168.4.1:8080/; }
     location = /gen_204      { return 302 http://192.168.4.1:8080/; }
+    location = /connecttest.txt { return 302 http://192.168.4.1:8080/; }
+    location = /redirect        { return 302 http://192.168.4.1:8080/; }
+    location = /ncsi.txt        { return 302 http://192.168.4.1:8080/; }
+    location = /success.txt     { return 302 http://192.168.4.1:8080/; }
+
+    location / {
+        try_files $uri $uri/ $uri.html /index.html;
+    }
 }
 ```
 
-Fajlok:
-- `/var/www/captive-portal/index.html`
-- `/var/www/captive-portal/hotspot-detect.html`
+### 8) Portal build kiexportalasa nginx ala
+
+Miert:
+- a portal mar Next appkent keszul
+- a jelenlegi guest flow statikus oldalakkal mukodik
+- Pi-n egyszerubb es stabilabb, ha nginx kozvetlenul a generalt fajlokat szolgalja ki
+
+Frontend oldalon:
+
+```ts
+// apps/portal-web/next.config.ts
+const nextConfig = {
+  output: "export",
+  trailingSlash: true,
+};
+```
+
+Build helyben vagy a Pi-n:
+
+```bash
+cd apps/portal-web
+npm run build
+```
+
+Ennek eredmenye az `apps/portal-web/out/` mappa.
+
+Telepites a Pi-n:
+
+```bash
+sudo mkdir -p /var/www/captive-portal
+sudo rsync -av --delete apps/portal-web/out/ /var/www/captive-portal/
+sudo nginx -t
+sudo systemctl reload nginx
+```
+
+Fontos:
+- A portal `index.html`, `/guest/`, `/login/` es a tobbi statikus route az exportalt `out/` konyvtarbol jon.
+- Az export build egyszer ker ki kulso font asseteket a build gepen, ezert a `npm run build` alatt kell mukodo upstream internet.
+- Ha a gateway IP nem `192.168.4.1`, akkor a `dnsmasq` es `nginx` captive endpointokban ezt at kell irni.
 
 ## Mukodes ellenorzese
 

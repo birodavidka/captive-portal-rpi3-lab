@@ -7,16 +7,24 @@ server {
     root /var/www/captive-portal;
     index index.html;
 
-    location / {
-        try_files $uri /index.html;
-    }
-
     # iOS captive check
     location = /hotspot-detect.html {
-        try_files /hotspot-detect.html =404;
+        try_files /index.html =404;
     }
 
     # Android captive check
     location = /generate_204 { return 302 http://192.168.4.1:8080/ ; }
     location = /gen_204      { return 302 http://192.168.4.1:8080/; }
+
+    # Windows captive check
+    location = /connecttest.txt { return 302 http://192.168.4.1:8080/; }
+    location = /redirect        { return 302 http://192.168.4.1:8080/; }
+    location = /ncsi.txt        { return 302 http://192.168.4.1:8080/; }
+
+    # Firefox captive check
+    location = /success.txt { return 302 http://192.168.4.1:8080/; }
+
+    location / {
+        try_files $uri $uri/ $uri.html /index.html;
+    }
 }
